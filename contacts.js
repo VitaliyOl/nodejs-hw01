@@ -11,7 +11,6 @@ const writeFile = async (contacts) => {
 const listContacts = async () => {
   try {
     const data = await fs.readFile(contactsPath);
-    console.log(data);
     return JSON.parse(data);
   } catch (error) {
     console.error("Error reading contacts file:", error);
@@ -23,7 +22,6 @@ const getContactById = async (contactId) => {
   try {
     const contacts = await listContacts();
     const contact = contacts.find((contact) => contact.id === contactId);
-    console.log(contact);
     return contact || null;
   } catch (error) {
     console.error("Error getting contact by ID:", error);
