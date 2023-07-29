@@ -32,6 +32,7 @@ const getContactById = async (contactId) => {
 const removeContact = async (contactId) => {
   try {
     const contacts = await listContacts();
+    console.log(contacts);
     const findIndex = contacts.findIndex((contact) => contact.id === contactId);
 
     if (findIndex === -1) {
