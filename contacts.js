@@ -11,6 +11,7 @@ const writeFile = async (contacts) => {
 const listContacts = async () => {
   try {
     const data = await fs.readFile(contactsPath);
+    console.log(data);
     return JSON.parse(data);
   } catch (error) {
     console.error("Error reading contacts file:", error);
